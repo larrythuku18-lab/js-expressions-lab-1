@@ -29,25 +29,35 @@ const day28TempC = 17
 const day29TempF = 76
 const day30TempC = 29
 
-const tempInFahrenheit = 40
-const tempInCelsius = 10
- 
-const tot_temperature_in_fahrenheit = day1TempF + day3TempF + day5TempF + day7TempF + day9TempF + day11TempF + day13TempF + day15TempF + day17TempF + day19TempF + day21TempF + day23TempF + day25TempF + day27TempF + day29TempF
-const tot_temperature_in_celsius = day2TempC + day4TempC + day6TempC + day8TempC + day10TempC + day12TempC + day14TempC + day16TempC + day18TempC + day20TempC + day22TempC + day24TempC + day26TempC + day28TempC + day30TempC
+// Arrays for easier calculation
+const celsiusTemps = [25, 18, 15, 28, 20, 23, 30, 22, 26, 24, 21, 27, 19, 17, 29];
+const fahrenheitTemps = [32, 70, 80, 72, 68, 75, 82, 65, 77, 78, 73, 79, 71, 74, 76];
+
+// Convert Celsius to Fahrenheit
+const celsiusToFahrenheit = (celsiusTemps * 9 / 5) + 32;
+
+// Convert Fahrenheit to Celsius
+const fahrenheitToCelsius = (fahrenheitTemps - 32) * 5 / 9;
 
 
+// All temperatures in Fahrenheit
+const allTempsInFahrenheit = fahrenheitTemps.concat(celsiusToFahrenheit);
 
-const tempInFahrenheitToCelsius = (tempInFahrenheit - 32) * 5 / 9;
-const tempInCelsiusToFahrenheit = (tempInCelsius * 9 / 5) + 32;
+// All temperatures in Celsius
+const allTempsInCelsius = celsiusTemps.concat(fahrenheitToCelsius);
 
+// Total temperatures
+const tot_temperature_in_fahrenheit = 32 + 70 + 80 + 72 + 68 + 75 + 82 + 65 + 77 + 78 + 73 + 79 + 71 + 74 + 76;
+const tot_temperature_in_celsius = 25 + 18 + 15 + 28 + 20 + 23 + 30 + 22 + 26 + 24 + 21 + 27 + 19 + 17 + 29;
 
+// Average temperatures
+const avg_temperature_in_fahrenheit = tot_temperature_in_fahrenheit / 30;
+const avg_temperature_in_celsius = tot_temperature_in_celsius / 30;
 
-const avg_temperature_in_fahrenheit = tot_temperature_in_fahrenheit / 15
-const avg_temperature_in_celsius = tot_temperature_in_celsius / 15
-
-
-console.log(tot_temperature_in_celsius)
-console.log(tot_temperature_in_fahrenheit)
+console.log( tot_temperature_in_fahrenheit);
+console.log( tot_temperature_in_celsius);
+console.log( avg_temperature_in_fahrenheit);
+console.log( avg_temperature_in_celsius);
 console.log(avg_temperature_in_celsius)
 console.log(avg_temperature_in_fahrenheit)
 
