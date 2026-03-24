@@ -34,11 +34,10 @@ const celsiusTemps = [25, 18, 15, 28, 20, 23, 30, 22, 26, 24, 21, 27, 19, 17, 29
 const fahrenheitTemps = [32, 70, 80, 72, 68, 75, 82, 65, 77, 78, 73, 79, 71, 74, 76];
 
 // Convert Celsius to Fahrenheit
-const celsiusToFahrenheit = (celsiusTemps * 9 / 5) + 32;
+const celsiusToFahrenheit = celsiusTemps.map(temp => (temp * 9 / 5) + 32);
 
 // Convert Fahrenheit to Celsius
-const fahrenheitToCelsius = (fahrenheitTemps - 32) * 5 / 9;
-
+const fahrenheitToCelsius = fahrenheitTemps.map(temp => (temp - 32) * 5 / 9);
 
 // All temperatures in Fahrenheit
 const allTempsInFahrenheit = fahrenheitTemps.concat(celsiusToFahrenheit);
@@ -47,18 +46,17 @@ const allTempsInFahrenheit = fahrenheitTemps.concat(celsiusToFahrenheit);
 const allTempsInCelsius = celsiusTemps.concat(fahrenheitToCelsius);
 
 // Total temperatures
-const tot_temperature_in_fahrenheit = 32 + 70 + 80 + 72 + 68 + 75 + 82 + 65 + 77 + 78 + 73 + 79 + 71 + 74 + 76;
-const tot_temperature_in_celsius = 25 + 18 + 15 + 28 + 20 + 23 + 30 + 22 + 26 + 24 + 21 + 27 + 19 + 17 + 29;
+const tot_temperature_in_fahrenheit = allTempsInFahrenheit.reduce((sum, temp) => sum + temp, 0);
+const tot_temperature_in_celsius = allTempsInCelsius.reduce((sum, temp) => sum + temp, 0);
 
 // Average temperatures
 const avg_temperature_in_fahrenheit = tot_temperature_in_fahrenheit / 30;
 const avg_temperature_in_celsius = tot_temperature_in_celsius / 30;
 
-console.log( tot_temperature_in_fahrenheit);
-console.log( tot_temperature_in_celsius);
-console.log( avg_temperature_in_fahrenheit);
-console.log( avg_temperature_in_celsius);
-console.log(avg_temperature_in_celsius)
+console.log('Total temperature in Fahrenheit:', tot_temperature_in_fahrenheit);
+console.log('Total temperature in Celsius:', tot_temperature_in_celsius);
+console.log('Average temperature in Fahrenheit:', avg_temperature_in_fahrenheit);
+console.log('Average temperature in Celsius:', avg_temperature_in_celsius);
 console.log(avg_temperature_in_fahrenheit)
 
 module.exports = {
