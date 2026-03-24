@@ -29,14 +29,16 @@ const day28TempC = 17
 const day29TempF = 76
 const day30TempC = 29
 
-const tempInFahrenheitToCelsius = (tempInFahrenheit - 32) * 5 / 9
-
-
-const tempInCelsiusToFahrenheit = (tempInCelsius * 9 / 5) + 32
-
-
+const tempInFahrenheit = 40
+const tempInCelsius = 10
+ 
 const tot_temperature_in_fahrenheit = day1TempF + day3TempF + day5TempF + day7TempF + day9TempF + day11TempF + day13TempF + day15TempF + day17TempF + day19TempF + day21TempF + day23TempF + day25TempF + day27TempF + day29TempF
 const tot_temperature_in_celsius = day2TempC + day4TempC + day6TempC + day8TempC + day10TempC + day12TempC + day14TempC + day16TempC + day18TempC + day20TempC + day22TempC + day24TempC + day26TempC + day28TempC + day30TempC
+
+
+
+const tempInFahrenheitToCelsius = (tempInFahrenheit - 32) * 5 / 9;
+const tempInCelsiusToFahrenheit = (tempInCelsius * 9 / 5) + 32;
 
 
 
